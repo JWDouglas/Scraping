@@ -1,5 +1,5 @@
 {
-  "name": "laravieira/scrapping",
+  "name": "laravieira/scraping",
   "version": "1.0.0.",
   "description": "Simple Web Scraping Framework, based on Curl and str* functions.",
   "minimum-stability": "stable",
