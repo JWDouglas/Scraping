@@ -1,0 +1,15 @@
+{
+  "name": "laravieira/scrapping",
+  "version": "1.0.0.",
+  "description": "Simple Web Scraping Framework, based on Curl and str* functions.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "L4R4V131R4",
+      "email": "contato@laravieira.me"
+    }
+  ],
+  "require": {
+  }
+}
