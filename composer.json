@@ -12,5 +12,10 @@
   "require": {
     "ext-curl": "*",
     "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Scraping\\": "src/"
+    }
   }
 }
