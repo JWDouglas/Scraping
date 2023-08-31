@@ -318,12 +318,7 @@ function price(string $string): float
 
 function accents(string $string): string
 {
-    $accents_array = str_split('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ');
-
-    $accents_array = array_map(fn($item) => mb_convert_encoding($item, "UTF-8", mb_detect_encoding($item)), $accents_array);
-    $string = mb_convert_encoding($string, "UTF-8", mb_detect_encoding($string));
-
-    return strtr($string, $accents_array, 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+    return strtr($string, 'àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 function strmstr(string $string, string $start1, string $start2, string $start3=null): bool|string
