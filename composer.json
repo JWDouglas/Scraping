@@ -1,6 +1,6 @@
 {
   "name": "laravieira/scraping",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Web Scraping Framework, based on Curl and str* functions.",
   "license": "proprietary",
   "authors": [
@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "php": "^8.2",
     "ext-curl": "*",
     "ext-mbstring": "*"
   },

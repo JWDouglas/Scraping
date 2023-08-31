@@ -87,7 +87,7 @@ use Exception;
 
 class Scraping {
     const SCRAPING_NAME    = 'Scraping';
-    const SCRAPING_VERSION = '1.0.0';
+    const SCRAPING_VERSION = '1.0.1';
     const SCRAPING_CACHE   = '/cache';
 
     private static string $cacheFolder = Scraping::SCRAPING_CACHE;
@@ -318,7 +318,12 @@ function price(string $string): float
 
 function accents(string $string): string
 {
-    return strtr(utf8_decode($string), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+    $accents_array = str_split('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ');
+
+    $accents_array = array_map(fn($item) => mb_convert_encoding($item, "UTF-8", mb_detect_encoding($item)), $accents_array);
+    $string = mb_convert_encoding($string, "UTF-8", mb_detect_encoding($string));
+
+    return strtr($string, $accents_array, 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 function strmstr(string $string, string $start1, string $start2, string $start3=null): bool|string
